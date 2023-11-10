@@ -11,13 +11,19 @@ app.get('/', (req, res) => {
 });
 
 app.post('/login',(req,res)=>{
-  res.sendFile(__dirname + '/main.html');
-  if(req.body.id=='abc'&&req.body.pw=='1234'){
-    res.send('로그인 성공');
-  }
-  else{
-    res.send('로그인 실패');
-  }
+  res.sendFile(__dirname + '/login.html');
+});
+
+app.post('/select',(req,res)=>{
+  res.sendFile(__dirname + '/select.html');
+});
+
+app.post('/insert',(req,res)=>{
+  res.sendFile(__dirname + '/insert.html');
+});
+
+app.post('/delete',(req,res)=>{
+  res.sendFile(__dirname + '/delete.html');
 });
 //sendFile함수
 // 문자열 대신 파일을 보내줌.
