@@ -1,0 +1,65 @@
+사용하는 언어는 sql
+
+CRUD를 구현 API로
+
+Create Read Update Delete
+
+insert select update delete
+
+API란 사용자들에게 활용할 수 있게 해주는 방법 중 하나로
+사용자가 특정한 URL에 특정한 method로 접근했을 때 정해진 동작을 하는 것.
+
+그래서 node js랑 express만으로도 api만들 수 있긴 함.
+
+요즘 뜨는 건 REST API고
+
+get post delete put과 같은 방식 등으로
+특정 url 들어가면 지도를 준다던가
+
+이와 연관된 게 데베
+front에선 학생 관리해서 화면
+데이터베이스에 접근하는 것은 백엔드가 한다.
+
+이 주소로 create,read,update, delete
+	POST 	GET	PUT	DELETE 방식으로 접근 시 데이터를 만들어주겠다
+읽게 해주겠다 업데이트할 수 있따 삭제할 수 있다.
+그 코드를 app.js로 설계함.
+쿼리 문이 여기서 쓰이는 것.
+
+connect 객체 생성
+mysql안에 있는 createConnection함수로
+내부에는 KEY-VALUE형태로 있는 JSON을 넘겨줌.
+connect()
+disconnect()
+데이터베이스 서버에 연결, 종료
+querry()함수에는 get이나 post랑 비슷하게 생김.
+2개의 파라미터가 들어가고.
+callback함수
+자바 스크립트에서 진행하는 화살표 함수
+파라미터, 실행구문만 있고 이름 없이 선언하는 익명함수
+
+함수 캡슐화 같은 걸로 함수 이름만 넣게 할 수도 있다.
+첫번째 파라미터는 쿼리문,
+그리고 두 번째가 콜백인데,
+error rows fields를 받는데
+error는 쿼리문을 통해 실행하려 했는데 에러 발생시 내용이 담김
+if(error) 에러 안에 비어있지 않다면 처리해라.
+발생하지 않을 경우 console.log해서 rows를 처리
+rows는 데이터베이스의 쿼리문을 한 결과를 rows에 전달.
+
+
+데이터 베이스랑 express 코드랑 합칠건데,
+
+app.get('/',(req,res)=>{
+//mbti 테이블 모든 데이터 send
+});
+
+connection코드는 express 코드 위에 작성
+
+connection query()
+res send
+모든 작업이 다 끝난 다음에 send
+콜백함수 때문에 맨 밑에 있는 코드가 마지막이 아니라는 것
+그래서 콜백을 잘 활용해서 작성
+
+localhost:3000으로 접속했을 때, mbti 데이터가 모두 화면에 보이면 성공

@@ -1,0 +1,53 @@
+node js
+
+http할건데
+
+4가지 방식
+get
+post
+put
+delete
+
+html은 텍스트 파일이고
+서버는 이런 html을 브라우저로 전송하는 컴퓨터
+
+변수선언은
+let
+
+const
+
+var (재선언 가능)
+
+var는 위험해서 잘 안쓰는게 좋음.
+
+ require 패키지
+모듈변수
+
+
+패키지란 미리 개발된 코드들
+
+express는 web server에 최적화된 패키지
+get listen입력 받는 것 기다리고
+get은 사용자가 특정 path에 접속했을 때 send 등
+
+listen은 매개변수 포트call back
+get은 path callback
+
+
+
+과제 테스트 로그인 기능
+localhost:3000/login화면에서
+제목은 로그인 페이지
+id입력하는 부분과
+pw입력하는 부분
+로그인 버튼
+
+로그인 버튼을 누를시 post 방식으로 /login_check로 이동
+
+(req,res) =>}
+req.body.id == abc
+req.body.pw == 1234
+성공
+
+아니면 실패
+
