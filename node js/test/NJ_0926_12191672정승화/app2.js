@@ -6,15 +6,12 @@ const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
-app.get('/home', (req, res) => {
-    res.send('안녕하세요, home 입니다!');
-});
-
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/login.html');
+    res.sendFile(__dirname + '/main.html');
 });
 
 app.post('/login',(req,res)=>{
+  res.sendFile(__dirname + '/main.html');
   if(req.body.id=='abc'&&req.body.pw=='1234'){
     res.send('로그인 성공');
   }
