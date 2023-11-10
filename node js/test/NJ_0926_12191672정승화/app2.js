@@ -25,6 +25,10 @@ app.post('/insert',(req,res)=>{
 app.post('/delete',(req,res)=>{
   res.sendFile(__dirname + '/delete.html');
 });
+
+app.post('/ex',(req,res)=>{
+  res.sendFile(__dirname + '/ex.html');
+});
 //sendFile함수
 // 문자열 대신 파일을 보내줌.
 // post방식에서
